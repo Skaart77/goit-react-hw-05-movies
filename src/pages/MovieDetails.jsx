@@ -1,6 +1,7 @@
 import { Link, useParams, Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieDetail } from 'api/api';
+import { HiUserGroup, HiOutlineChatBubbleLeft } from 'react-icons/hi2';
 
 const MovieDetails = () => {
   const [data, setData] = useState(null);
@@ -36,7 +37,9 @@ const MovieDetails = () => {
   const back = location.state?.from ?? '/movie';
   return (
     <>
-      <Link to={back}>Go Back</Link>
+      <Link className="button-back" to={back}>
+        Go Back
+      </Link>
       {loading ? (
         'Loading...'
       ) : (
@@ -62,20 +65,26 @@ const MovieDetails = () => {
               <p>Genres</p>
               <p>{getGenres(data.genres)}</p>
             </div>
-          </div>
-          <div>
-            <ul>
-              <li>
-                <Link to="cast" state={{ from: back }}>
-                  <button>Cast</button>
-                </Link>
-              </li>
-              <li>
-                <Link to="reviews" state={{ from: back }}>
-                  <button>Reviews</button>
-                </Link>
-              </li>
-            </ul>
+            <div>
+              <ul className="movie_details--info">
+                <li>
+                  <Link to="cast" state={{ from: back }}>
+                    <button className="movie_details--button">
+                      <HiUserGroup size={20} />
+                      Cast
+                    </button>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="reviews" state={{ from: back }}>
+                    <button className="movie_details--button">
+                      <HiOutlineChatBubbleLeft size={20} />
+                      Reviews
+                    </button>
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
           <Outlet />
         </>

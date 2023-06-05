@@ -8,7 +8,7 @@ const Layout = () => {
         <ul className="header_nav">
           <FcClapperboard size={50} />
           <li>
-            <NavLink className="header_nav--text" to="/">
+            <NavLink className="header_nav--text " to="/">
               Home
             </NavLink>
           </li>

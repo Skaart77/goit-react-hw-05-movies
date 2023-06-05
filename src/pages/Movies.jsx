@@ -3,7 +3,7 @@ import { useSearchParams, Link, useLocation } from 'react-router-dom';
 import { searchMovie } from 'api/api';
 
 const Movies = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -46,6 +46,7 @@ const Movies = () => {
     <>
       <form onSubmit={handleSubmit}>
         <input
+          className="search-input"
           type="text"
           autoComplete="off"
           autoFocus
@@ -53,14 +54,16 @@ const Movies = () => {
           onChange={handleInputChange}
           value={query}
         />
-        <button type="submit">Search</button>
+        <button className="search-button" type="submit">
+          Search
+        </button>
       </form>
       <>
         <ul>
           {searchQuery ? (
             loading ? (
               'Loading...'
-            ) : (data || []).lenght > 0 ? (
+            ) : data.lenght > 0 ? (
               data.map(({ title, id }) => (
                 <li key={id}>
                   <Link state={{ from: location }} to={`/movies/${id}`}>
