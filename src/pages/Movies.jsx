@@ -44,7 +44,7 @@ const Movies = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <input
           className="search-input"
           type="text"

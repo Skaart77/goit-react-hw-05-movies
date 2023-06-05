@@ -29,10 +29,10 @@ const Reviews = () => {
         'Loading...'
       ) : data && data.length > 0 ? (
         <div>
-          <ul>
+          <ul className="reviews">
             {data.map(({ author, content, id }) => (
               <li key={id}>
-                <p>{author}</p>
+                <p className="reviews-author">{author}</p>
                 {content && content}
               </li>
             ))}

@@ -40,6 +40,10 @@ img {
 .header_nav--text {
   font-size: 30px;
   text-decoration: none;
+  color: #4676d7;
+}
+.header_nav--text.active {
+  color: #2a4780;
 }
 
 .header_nav--link {
@@ -70,10 +74,13 @@ img {
   appearance: none;
   border: 0;
   border-radius: 5px;
-  background: #4676d7;
+  background-color: #4676d7;
   color: #fff;
   padding: 8px 16px;
   font-size: 18px;
+}
+.movie_details--button:hover {
+  background-color: #2a4780;
 }
 
 .movie_details--info {
@@ -94,21 +101,27 @@ img {
   appearance: none;
   border: 0;
   border-radius: 5px;
-  background: #4676d7;
+  background-color: #4676d7;
   color: #fff;
   padding: 8px 16px;
   font-size: 16px;
+}
+
+.button-back:hover {
+  background-color: #2a4780;
 }
 .search-button {
   appearance: none;
   border: 0;
   border-radius: 5px;
-  background: #4676d7;
+  background-color: #4676d7;
   color: #fff;
   padding: 8px 16px;
   font-size: 15px;
 }
-
+.search-button:hover {
+  background-color: #2a4780;
+}
 .search-input {
   width: 400px;
   height: 30px;
@@ -119,4 +132,15 @@ img {
   background-color: #a7a7a84a;
   color: #000000;
   outline: none;
+}
+
+.reviews {
+  padding: 0px 20px;
+}
+.reviews-author {
+  font-weight: 700;
+}
+
+.form {
+  padding: 20px;
 }
