@@ -21,7 +21,7 @@ export async function getTrendingMovie(page) {
   }
 }
 // // запрос деталей фільму
-export async function getMovieDetails(id) {
+export async function getMovieDetail(id) {
   const query = `/movie/${id}`;
   try {
     const { data } = await instance.get(query);

@@ -11,6 +11,7 @@ const Movies = () => {
 
   const [query, setQuery] = useState(() => searchQuery || '');
 
+  // Get запит
   useEffect(() => {
     const getData = async () => {
       try {
@@ -56,16 +57,25 @@ const Movies = () => {
       </form>
       <>
         <ul>
-          <h2>Trending movies:</h2>
-          {loading
-            ? 'Loading...'
-            : data.map(({ title, id }) => (
+          {searchQuery ? (
+            loading ? (
+              'Loading...'
+            ) : (data || []).lenght > 0 ? (
+              data.map(({ title, id }) => (
                 <li key={id}>
-                  <Link to={`/movies/${id}`} state={{ from: location }}>
+                  <Link state={{ from: location }} to={`/movies/${id}`}>
                     {title}
                   </Link>
                 </li>
-              ))}
+              ))
+            ) : (
+              <p>
+                No movies with this title were found. Try entering another title
+              </p>
+            )
+          ) : (
+            <p>Write the name of the movie to search</p>
+          )}
         </ul>
       </>
     </>
