@@ -63,7 +63,7 @@ const Movies = () => {
           {searchQuery ? (
             loading ? (
               'Loading...'
-            ) : data.lenght > 0 ? (
+            ) : data.length > 0 ? (
               data.map(({ title, id }) => (
                 <li key={id}>
                   <Link state={{ from: location }} to={`/movies/${id}`}>
