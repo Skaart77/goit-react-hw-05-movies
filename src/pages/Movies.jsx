@@ -50,7 +50,7 @@ const Movies = () => {
           type="text"
           autoComplete="off"
           autoFocus
-          placeholder="Search images and photos"
+          placeholder="Search movie"
           onChange={handleInputChange}
           value={query}
         />
