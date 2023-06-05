@@ -53,15 +53,10 @@ export async function getMovieReviews(id) {
   }
 }
 
-// // пошук фільмів за ключовим словом
-export async function searchMovie(queryString, page) {
+export async function searchMovie(queryString) {
   const query = `/search/movie?query=${queryString}`;
   try {
-    const data = await instance.get(query, {
-      params: {
-        page,
-      },
-    });
+    const { data } = await instance.get(query);
     return data;
   } catch (error) {
     throw error;
